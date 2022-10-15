@@ -23,26 +23,28 @@ galleryRef.addEventListener("click", onImageClick);
 
 function onImageClick(e) {
   e.preventDefault();
-        
+  
+  const opts = {
+    onShow: (instance) => {
+      window.addEventListener("keydown", onEscClose);
+    },      
+    onClose: (instance) => {
+      window.removeEventListener("keydown", onEscClose);
+    },
+  };
+
     if (e.target.nodeName !== "IMG") {
-        console.log("Click not on image");
         return;
     }
 
-    console.log("Click on image");
-       
     const instance = basicLightbox.create(`
-      <img src="${e.target.dataset.source}"></img>`);
+      <img src="${e.target.dataset.source}"></img>`, opts);
     
     instance.show();
 
-    window.addEventListener("keydown", onEscClose);
-
-function onEscClose(e) {
-if (e.code === "Escape") {
+  function onEscClose(e) {
+  if (e.code === "Escape") {
   instance.close();
-  window.removeEventListener("keydown", onEscClose);
 }
-return;
 }
 }
