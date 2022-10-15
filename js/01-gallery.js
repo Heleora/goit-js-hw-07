@@ -32,7 +32,7 @@ function onImageClick(e) {
       window.removeEventListener("keydown", onEscClose);
     },
   };
-
+ 
     if (e.target.nodeName !== "IMG") {
         return;
     }
