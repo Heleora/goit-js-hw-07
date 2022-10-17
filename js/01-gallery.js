@@ -7,9 +7,9 @@ const galleryItemsMarkup = galleryItems.map((item) => {
   <a class="gallery__link" href="${item.original}">
   <img
   class="gallery__image"
-  src=${item.preview}
-  data-source=${item.original}
-  alt=${item.description}
+  src="${item.preview}"
+  data-source="${item.original}"
+  alt="${item.description}"
   />
   </a>
   </div>`
