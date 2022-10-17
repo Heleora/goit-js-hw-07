@@ -4,14 +4,13 @@ import { galleryItems } from './gallery-items.js';
 console.log(galleryItems);
 
 const galleryItemsMarkup = galleryItems.map(({ original, preview, description }) => {
-    return `<li>
+    return `
     <a class="gallery__item" href="${original}">
     <img
     class="gallery__image"
     src="${preview}"
     alt="${description}"/>
-    </a>
-    </li>`
+    </a>`
   }).join("");
 
      const galleryRef = document.querySelector(".gallery");
