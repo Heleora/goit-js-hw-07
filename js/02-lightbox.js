@@ -10,7 +10,8 @@ const galleryItemsMarkup = galleryItems.map(({ original, preview, description })
     class="gallery__image"
     src="${preview}"
     alt="${description}"/>
-    </a>`
+    </a>
+    `
   }).join("");
 
      const galleryRef = document.querySelector(".gallery");
